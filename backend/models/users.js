@@ -1,4 +1,4 @@
-// Users schema
+// Users Schema
 
 const mongoose = require("mongoose");
 
