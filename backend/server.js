@@ -3,6 +3,8 @@ console.log("PORT VALUE:", JSON.stringify(process.env.PORT));
 
 const express = require("express");
 const app = express();
+const cors = require("cors");
+app.use(cors());
 
 const connectDB = require("./config/db");
 connectDB();
