@@ -2,7 +2,7 @@
 
 require("dotenv").config();
 const connectDB = require("./config/db");
-const user = require("./models/users");
+const user = require("./models/user");
 
 const randomUsername = () => {
   const baseName = "reader";
@@ -18,7 +18,7 @@ const randomPassword = () => {
 const seedUsers = async () => {
   try {
     await connectDB();
-    await user.deleteMany();
+    // await user.deleteMany();
 
     const users = Array.from({ length: 3 }).map(() => ({
       username: randomUsername(),
