@@ -8,12 +8,12 @@ const questionSchema = new mongoose.Schema(
     body: { type: String, required: true },
     topic: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "topic",
+      ref: "Topic",
       required: true,
     },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "user", required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   },
   { timestamps: true },
 );
 
-module.exports = mongoose.model("question", questionSchema);
+module.exports = mongoose.model("Question", questionSchema);

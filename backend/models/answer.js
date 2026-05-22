@@ -7,12 +7,12 @@ const answerSchema = new mongoose.Schema(
     body: { type: String, required: true },
     question: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "question",
+      ref: "Question",
       required: true,
     },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "user", required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   },
   { timestamps: true },
 );
 
-module.exports = mongoose.model("answer", answerSchema);
+module.exports = mongoose.model("Answer", answerSchema);

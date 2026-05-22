@@ -13,6 +13,7 @@ app.use(express.json());
 // API Routes
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/topics", require("./routes/topicRoutes"));
+app.use("/api/questions", require("./routes/questionRoutes"));
 
 // Start server
 const PORT = process.env.PORT || 5000;
