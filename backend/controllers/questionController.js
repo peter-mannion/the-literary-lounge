@@ -5,8 +5,8 @@ exports.getQuestions = async (req, res) => {
   try {
     const questions = await Question.find()
       .populate("topic", "name description")
-      .populate("user", "username email");
-
+      .populate("user", "username")
+      .sort({ createdAt: -1 });
     res.json(questions);
   } catch (err) {
     console.error(err);
@@ -19,7 +19,7 @@ exports.getQuestionById = async (req, res) => {
   try {
     const question = await Question.findById(req.params.id)
       .populate("topic", "name description")
-      .populate("user", "username email");
+      .populate("user", "username");
 
     if (!question) return res.status(404).json({ error: "Question not found" });
 
