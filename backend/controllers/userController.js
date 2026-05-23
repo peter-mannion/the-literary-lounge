@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const User = require("../models/user");
 
 exports.registerUser = async (req, res) => {
@@ -9,9 +10,16 @@ exports.registerUser = async (req, res) => {
     if (existing) {
       return res.status(400).json({ error: "Username already taken" });
     }
+    // Hash password
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create new user
-    const user = await User.create({ username, password });
+    console.log("Hashed password:", hashedPassword);
+
+    // Create new user with hashed password
+    const user = await User.create({
+      username,
+      password: hashedPassword,
+    });
 
     res.status(201).json({
       message: "User registered",
@@ -31,8 +39,9 @@ exports.loginUser = async (req, res) => {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
-    // Plain-text comparison for now
-    if (user.password !== password) {
+    // Compare hashed password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
