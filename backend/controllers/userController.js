@@ -10,6 +10,7 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ error: "Username already taken" });
     }
 
+    // Create new user
     const user = await User.create({ username, password });
 
     res.status(201).json({

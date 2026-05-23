@@ -8,6 +8,11 @@ body {
   margin: 0;
 }
 
+.logo-area {
+  display: flex;
+  justify-content: center;
+}
+
 .logo-area img {
   width: 150px;
   height: auto;

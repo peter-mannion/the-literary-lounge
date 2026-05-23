@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.register-container {
+  width: 600px;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-area img {
+  width: 150px;
+  height: auto;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.form-field {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error-field {
+  width: 35%;
+  color: red;
+  font-size: 0.7rem;
+  padding-left: 5px;
+}
+
+.checkbox-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.checkbox-field {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox-field label {
+  padding-left: 10px;
+  font-size: 0.7rem;
+}
+
+.checkbox-error {
+  width: 35%;
+  color: red;
+  font-size: 0.7rem;
+  margin-top: auto;
+}
+
+.register-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 15px;
+}

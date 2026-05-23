@@ -19,10 +19,10 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     }
 
     // Save token for authenticated routes
-    localStorage.setItem("token", data.token);
+    // localStorage.setItem("token", data.token);
 
-    alert("Login successful");
-    window.location.href = "index.html"; // redirect to homepage
+    // Redirect to homepage
+    window.location.href = "index.html";
   } catch (err) {
     console.error(err);
     alert("Server error");

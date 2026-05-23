@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Literary Lounge — Register</title>
+    <link rel="stylesheet" href="register.css" />
+  </head>
+
+  <body>
+    <div class="register-container">
+      <div class="logo-area">
+        <img src="assets/chair-and-book-logo.png" alt="App Logo" />
+      </div>
+      <h2>Create an Account</h2>
+
+      <form id="registerForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" id="username" placeholder="Username" />
+          </div>
+          <div class="error-field" id="usernameError"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+          <div class="error-field" id="passwordError"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <input
+              type="password"
+              id="repeatPassword"
+              placeholder="Repeat Pasword"
+            />
+          </div>
+          <div class="error-field" id="repeatPasswordError"></div>
+        </div>
+
+        <div class="checkbox-row">
+          <div class="checkbox-field">
+            <input type="checkbox" id="terms" />
+            <label for="terms"
+              >I agree to Terms and Conditions and Privacy Policy</label
+            >
+          </div>
+          <div class="checkbox-error" id="termsError"></div>
+        </div>
+
+        <button type="submit" class="register-btn">Register</button>
+
+        <p class="switch-link">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </form>
+    </div>
+
+    <script src="register.js"></script>
+  </body>
+</html>
