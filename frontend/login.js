@@ -19,7 +19,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     }
 
     // Save token for authenticated routes
-    // localStorage.setItem("token", data.token);
+    localStorage.setItem("token", data.token);
 
     // Redirect to homepage
     window.location.href = "index.html";
