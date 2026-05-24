@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { api } from "../utils/api";
 import { Link, useNavigate } from "react-router-dom";
+import "./LoginPage.css";
+import logo from "../assets/book-and-coffee-logo.png";
 
 export default function LoginPage() {
   const { login } = useContext(AuthContext);
@@ -25,24 +27,30 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Username"
-          onChange={(e) => setForm({ ...form, username: e.target.value })}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setForm({ ...form, password: e.target.value })}
-        />
-        <button>Login</button>
-      </form>
-      {/* Link to register page */}
-      <p>
-        Don't have an account? <Link to="/register">Register here</Link>
-      </p>
+    <div className="login-page">
+      <div className="form-container">
+        <div className="logo-area">
+          <img src={logo} alt="App Logo" />
+        </div>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="Username"
+            onChange={(e) => setForm({ ...form, username: e.target.value })}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
+          />
+          <button>Login</button>
+        </form>
+        {/* Link to register page */}
+        <p>Don't have an account?</p>
+        <p className="register-link">
+          <Link to="/register">Register here</Link>
+        </p>
+      </div>
     </div>
   );
 }
