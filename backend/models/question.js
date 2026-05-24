@@ -11,7 +11,11 @@ const questionSchema = new mongoose.Schema(
       ref: "Topic",
       required: true,
     },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: false, // change back to true when Dashboard is done
+    },
   },
   { timestamps: true },
 );

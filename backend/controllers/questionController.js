@@ -1,12 +1,19 @@
 const Question = require("../models/question");
+const mongoose = require("mongoose");
 
 // GET all questions
 exports.getQuestions = async (req, res) => {
   try {
-    const questions = await Question.find()
+    const { topic } = req.query;
+    console.log("req.query:", req.query);
+
+    const filter = topic ? { topic: new mongoose.Types.ObjectId(topic) } : {};
+
+    const questions = await Question.find(filter)
       .populate("topic", "name description")
       .populate("user", "username")
       .sort({ createdAt: -1 });
+
     res.json(questions);
   } catch (err) {
     console.error(err);
