@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { api } from "../utils/api";
+import Navbar from "../components/Navbar";
 
 export default function Dashboard() {
   const { token, user } = useContext(AuthContext);
@@ -12,6 +13,7 @@ export default function Dashboard() {
 
   return (
     <div>
+      <Navbar />
       <h1>Welcome, {user?.username}</h1>
       <h2>Users:</h2>
       <pre>{JSON.stringify(users, null, 2)}</pre>
