@@ -15,7 +15,9 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-right">
-        <span className="welcome-text">Welcome, Peter</span>
+        <span className="welcome-text">
+          Welcome{user?.username ? `, ${user.username}` : ""}
+        </span>
 
         <button className="logout-btn" onClick={logout}>
           Logout

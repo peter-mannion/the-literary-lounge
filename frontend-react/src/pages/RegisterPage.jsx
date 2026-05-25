@@ -74,6 +74,9 @@ export default function RegisterPage() {
     }
 
     alert("Registered successfully");
+    setForm({ username: "", password: "", repeatPassword: "", terms: false });
+    setErrors({ username: "", password: "", repeatPassword: "", terms: "" });
+    setError("");
   };
 
   return (
