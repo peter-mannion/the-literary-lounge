@@ -55,3 +55,55 @@
 .logout-btn:hover {
   background: #e60000;
 }
+
+/* Responsive design for narrow screens */
+@media (max-width: 600px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 10px 20px;
+    align-items: start;
+  }
+
+  .navbar-left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .navbar-right {
+    display: contents;
+  }
+
+  .welcome-text {
+    grid-column: 1;
+    grid-row: 2;
+    white-space: normal;
+  }
+
+  .logout-btn {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+}
+
+/* Responsive design for narrow screens */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar-left {
+    width: 100%;
+  }
+
+  .navbar-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .welcome-text {
+    white-space: normal;
+  }
+}
