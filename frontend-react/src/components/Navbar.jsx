@@ -1,19 +1,26 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
-  const { token, logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   return (
-    <nav style={{ padding: "10px", borderBottom: "1px solid #ccc" }}>
-      <Link to="/dashboard">Dashboard</Link>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <Link to="/dashboard" className="app-title">
+          The Literary Lounge
+        </Link>
+      </div>
 
-      {token && (
-        <button onClick={logout} style={{ marginLeft: "20px" }}>
+      <div className="navbar-right">
+        <span className="welcome-text">Welcome, Peter</span>
+
+        <button className="logout-btn" onClick={logout}>
           Logout
         </button>
-      )}
+      </div>
     </nav>
   );
 }

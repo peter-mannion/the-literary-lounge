@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 15px 25px;
+}
+
+/* App title on the left */
+.app-title {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Right side: welcome + logout */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-text {
+  font-size: 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Logout button */
+.logout-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #e60000;
+}
