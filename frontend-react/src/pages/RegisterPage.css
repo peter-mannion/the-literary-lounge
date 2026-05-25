@@ -9,11 +9,11 @@
   margin: 0;
 }
 
-.form-container {
+.register-container {
   background: white;
   padding: 30px;
   border-radius: 8px;
-  width: 300px;
+  width: 500px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -32,13 +32,32 @@ h1 {
   margin-bottom: 20px;
 }
 
-input {
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Ensure the first child (input container) takes remaining space */
+.form-row > *:first-child {
+  flex: 1;
+}
+
+.form-row input {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 5px;
+  padding: 8px;
   border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
+}
+
+.error-field {
+  min-width: 140px; /* reserve space so inputs stay same width */
+  color: red;
+  font-size: 0.85rem;
+  padding-left: 8px;
+  text-align: left;
 }
 
 button {

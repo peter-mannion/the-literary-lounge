@@ -6,6 +6,10 @@ exports.registerUser = async (req, res) => {
   try {
     const { username, password } = req.body;
 
+    //    if (!username || !username.trim() || !password || !password.trim()) {
+    //      return res.status(400).json({ error: "Username and password are required" });
+    //    }
+
     // Check if username exists
     const existing = await User.findOne({ username });
     if (existing) {
