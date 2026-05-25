@@ -15,6 +15,10 @@ export default function Navbar() {
         </Link>
       </div>
 
+      <div className="navbar-center">
+        <h1 className="app-title">The Literary Lounge</h1>
+      </div>
+
       <div className="navbar-right">
         <span className="welcome-text">
           Welcome{user?.username ? `, ${user.username}` : ""}
