@@ -9,19 +9,21 @@ export default function RegisterPage() {
     username: "",
     password: "",
     repeatPassword: "",
+    terms: false,
   });
   const [error, setError] = useState("");
   const [errors, setErrors] = useState({
     username: "",
     password: "",
     repeatPassword: "",
+    terms: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setError("");
-    setErrors({ username: "", password: "", repeatPassword: "" });
+    setErrors({ username: "", password: "", repeatPassword: "", terms: "" });
 
     const newErrors = {};
 
@@ -45,6 +47,11 @@ export default function RegisterPage() {
       newErrors.repeatPassword = "Passwords do not match.";
     }
 
+    // Terms and Conditions checkbox validation
+    if (!form.terms) {
+      newErrors.terms = "You must agree before registering";
+    }
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -57,6 +64,11 @@ export default function RegisterPage() {
     );
 
     if (data.error) {
+      if (data.error === "Username already taken") {
+        setErrors((prev) => ({ ...prev, username: data.error }));
+        return;
+      }
+
       setError(data.error);
       return;
     }
@@ -73,18 +85,17 @@ export default function RegisterPage() {
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
-            <div>
-              <input
-                placeholder="Username"
-                value={form.username}
-                onChange={(e) => {
-                  setForm({ ...form, username: e.target.value });
-                  if (errors.username) {
-                    setErrors({ ...errors, username: "" });
-                  }
-                }}
-              />
-            </div>
+            <input
+              placeholder="Username"
+              value={form.username}
+              onChange={(e) => {
+                setForm({ ...form, username: e.target.value });
+                if (errors.username) {
+                  setErrors({ ...errors, username: "" });
+                }
+              }}
+            />
+
             <div className="error-field">
               {errors.username && <span>{errors.username}</span>}
             </div>
@@ -121,6 +132,27 @@ export default function RegisterPage() {
             />
             <div className="error-field">
               {errors.repeatPassword && <span>{errors.repeatPassword}</span>}
+            </div>
+          </div>
+          <div className="checkbox-row">
+            <div className="checkbox-field">
+              <input
+                type="checkbox"
+                id="terms"
+                checked={form.terms}
+                onChange={(e) => {
+                  setForm({ ...form, terms: e.target.checked });
+                  if (errors.terms) {
+                    setErrors({ ...errors, terms: "" });
+                  }
+                }}
+              />
+              <label htmlFor="terms">
+                I agree to Terms and Conditions and Privacy Policy
+              </label>
+            </div>
+            <div className="checkbox-error">
+              {errors.terms && <span>{errors.terms}</span>}
             </div>
           </div>
           <button>Register</button>

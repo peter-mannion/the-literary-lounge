@@ -11,11 +11,16 @@
 
 .register-container {
   background: white;
-  padding: 30px;
+
   border-radius: 8px;
-  width: 500px;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .logo-area {
@@ -32,19 +37,19 @@ h1 {
   margin-bottom: 20px;
 }
 
-.form-row {
+.form-row,
+.checkbox-row {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
-}
-
-/* Ensure the first child (input container) takes remaining space */
-.form-row > *:first-child {
-  flex: 1;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 0; /* align row content with form inputs */
 }
 
 .form-row input {
+  flex: 1;
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -52,12 +57,37 @@ h1 {
   box-sizing: border-box;
 }
 
-.error-field {
-  min-width: 140px; /* reserve space so inputs stay same width */
+.error-field,
+.checkbox-error {
+  flex: 0 0 160px;
   color: red;
-  font-size: 0.85rem;
-  padding-left: 8px;
+  font-size: 0.7rem;
   text-align: left;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.2;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.checkbox-field {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* horizontal left alignment */
+  align-items: center;
+  margin-left: 0;
+  padding-left: 0; /* remove inset so checkbox sits flush with inputs */
+}
+
+.checkbox-field label {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  width: 90%;
+}
+
+.checkbox-field input {
+  width: 10%;
+  margin: 0; /* remove default input spacing */
 }
 
 button {
@@ -81,4 +111,24 @@ button:hover {
 .login-link a {
   color: #007bff;
   text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .form-row,
+  .checkbox-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .error-field,
+  .checkbox-error {
+    flex: none;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .form-row input,
+  .checkbox-field {
+    width: 100%;
+  }
 }
