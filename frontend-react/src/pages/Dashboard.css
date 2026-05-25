@@ -19,6 +19,7 @@
   margin: 20px auto;
   gap: 16px;
   width: 100%;
+  align-items: flex-start;
 }
 
 /* Sidebar */
@@ -29,8 +30,9 @@
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
-  overflow-y: auto;
-  max-height: calc(100vh - 80px);
+  overflow: visible;
+  max-height: none;
+  height: auto;
   flex-shrink: 0;
 }
 
@@ -138,4 +140,34 @@
 .dashboard-content p {
   font-size: 14px;
   color: #6b7280;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    flex-shrink: 1;
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 425px) {
+  .dashboard-sidebar {
+    flex-shrink: 1;
+    width: auto;
+    min-width: 150px;
+  }
+
+  .question-item h3 {
+    font-size: 14px;
+  }
+
+  .question-item p {
+    font-size: 12px;
+  }
+
+  .question-item .meta {
+    font-size: 11px;
+  }
 }
