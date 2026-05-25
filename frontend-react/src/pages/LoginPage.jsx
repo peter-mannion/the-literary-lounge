@@ -8,10 +8,12 @@ import logo from "../assets/book-and-coffee-logo.png";
 export default function LoginPage() {
   const { login } = useContext(AuthContext);
   const [form, setForm] = useState({ username: "", password: "" });
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(""); // Clear previous errors
     const data = await api(
       "http://localhost:5000/api/users/login",
       "POST",
@@ -23,6 +25,8 @@ export default function LoginPage() {
     if (data.token) {
       login(data.token, data.user);
       navigate("/dashboard");
+    } else if (data.error) {
+      setError(data.error);
     }
   };
 
@@ -33,6 +37,7 @@ export default function LoginPage() {
           <img src={logo} alt="App Logo" />
         </div>
         <h1>Login</h1>
+        {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <input
             placeholder="Username"
