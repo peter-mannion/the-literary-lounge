@@ -1,5 +1,4 @@
 const Topic = require("../models/topic");
-console.log("Topic model:", Topic);
 
 // GET all topics
 exports.getTopics = async (req, res) => {
