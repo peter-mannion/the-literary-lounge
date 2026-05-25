@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../assets/navbar-book-and-lounge-logo-2.png";
 
 export default function Navbar() {
   const { user, logout } = useContext(AuthContext);
@@ -9,8 +10,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Link to="/dashboard" className="app-title">
-          The Literary Lounge
+        <Link to="/dashboard" className="app-logo">
+          <img src={logo} alt="App Logo" />
         </Link>
       </div>
 

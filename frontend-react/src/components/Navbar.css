@@ -2,17 +2,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
+  /*background: #222;
+  background: #2c3e50 (deep slate blue)
+  background: #2c3e50  softer dark/navy feel
+  */
+  background: #8b5e3c; /*  (coffee brown) */
   color: white;
   padding: 15px 25px;
 }
 
-/* App title on the left */
-.app-title {
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
+/* App logo on the left */
+.app-logo {
+  display: flex;
+  justify-content: left;
+}
+
+.app-logo img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+
+.app-logo img:hover {
+  opacity: 0.92;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
 }
 
 /* Right side: welcome + logout */
