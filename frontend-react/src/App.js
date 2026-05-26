@@ -10,7 +10,7 @@ function App() {
   return (
     <AuthProvider>
       {/* React Router handles all page navigation */}
-      <HashRouter basename="/the-literary-lounge">
+      <HashRouter>
         <Routes>
           {/* Redirect root to login */}
           <Route path="/" element={<Navigate to="/login" replace />} />
