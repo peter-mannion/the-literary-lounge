@@ -6,8 +6,6 @@ import RegisterPage from "./pages/RegisterPage";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-export default App;
-
 function App() {
   return (
     <AuthProvider>
