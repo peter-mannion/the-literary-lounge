@@ -6,11 +6,13 @@ import RegisterPage from "./pages/RegisterPage";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 
+export default App;
+
 function App() {
   return (
     <AuthProvider>
       {/* React Router handles all page navigation */}
-      <BrowserRouter>
+      <BrowserRouter basename="/the-literary-lounge">
         <Routes>
           {/* Redirect root to login */}
           <Route path="/" element={<Navigate to="/login" replace />} />
