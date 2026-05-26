@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/the-literary-lounge/static/css/main.50d7d989.css",
-    "main.js": "/the-literary-lounge/static/js/main.6445a7af.js",
+    "main.js": "/the-literary-lounge/static/js/main.31951334.js",
     "static/js/453.cc8fffa2.chunk.js": "/the-literary-lounge/static/js/453.cc8fffa2.chunk.js",
     "static/media/book-and-coffee-logo.png": "/the-literary-lounge/static/media/book-and-coffee-logo.4d759869a1b8ccb07a21.png",
     "static/media/navbar-book-and-lounge-logo-2.png": "/the-literary-lounge/static/media/navbar-book-and-lounge-logo-2.073c6c4d39bc1717c8c7.png",
     "index.html": "/the-literary-lounge/index.html",
     "main.50d7d989.css.map": "/the-literary-lounge/static/css/main.50d7d989.css.map",
-    "main.6445a7af.js.map": "/the-literary-lounge/static/js/main.6445a7af.js.map",
+    "main.31951334.js.map": "/the-literary-lounge/static/js/main.31951334.js.map",
     "453.cc8fffa2.chunk.js.map": "/the-literary-lounge/static/js/453.cc8fffa2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.50d7d989.css",
-    "static/js/main.6445a7af.js"
+    "static/js/main.31951334.js"
   ]
 }
