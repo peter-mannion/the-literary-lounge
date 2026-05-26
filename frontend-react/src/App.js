@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 
 import LoginPage from "./pages/LoginPage";
@@ -10,7 +10,7 @@ function App() {
   return (
     <AuthProvider>
       {/* React Router handles all page navigation */}
-      <BrowserRouter basename="/the-literary-lounge">
+      <HashRouter basename="/the-literary-lounge">
         <Routes>
           {/* Redirect root to login */}
           <Route path="/" element={<Navigate to="/login" replace />} />
@@ -29,7 +29,7 @@ function App() {
           />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   );
 }
